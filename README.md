@@ -1,3 +1,4 @@
 # libraryorganizer2
-Work Distribution
- * Setup python env.
+## Work Distribution
+ * Task: Setup python env.
+ 

@@ -1,7 +1,7 @@
 from typing import List, Dict
 import mysql.connector
 import simplejson as json
-from flask import Flask, Response
+from flask import Flask, Response, redirect, url_for, render_template
 
 app = Flask(__name__)
 
@@ -25,12 +25,11 @@ def liborg() -> List[Dict]:
 
     return result
 
+
 @app.route('/')
-def index() -> str:
-    js = json.dumps(liborg())
-    resp = Response(js, status=200, mimetype='application/json')
-    return resp
+def home():
+    return render_template("index.html", content='Testing')
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    app.run(debug=True)
